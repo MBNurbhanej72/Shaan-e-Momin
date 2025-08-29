@@ -1,0 +1,33 @@
+.footer-main-light {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 4px 25px 0px #0000001F;
+  padding: 25px 37px;
+  background-color: var(--white-color);
+}
+
+.footer-main-dark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 4px 0px #FFFFFF7F;
+  padding: 25px 37px;
+  background-color: var(--dark-color);
+}
+
+.footer-main div.text-center {
+  cursor: pointer;
+}
+
+.footer-text {
+  margin-bottom: 0 !important;
+  margin-top: 10px;
+  font-family: "Rubik-SemiBold";
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: var(--primary-color);
+}

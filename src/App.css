@@ -1,0 +1,563 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* =====  Root Variables  ===== */
+
+:root {
+  --primary-color: #2DC97A;
+  --secondary-color: #FF9933;
+  --dark-color: #101420;
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+
+
+/* =====  Font Family  ===== */
+
+@font-face {
+  font-family: "Rubik-Light";
+  src: url(/assets/fonts/Rubik-Light.ttf);
+
+  /*?  Font Weight 300  ?*/
+}
+
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url(/assets/fonts/Rubik-Regular.ttf);
+
+  /*?  Font Weight 400  ?*/
+}
+
+@font-face {
+  font-family: "Rubik-Medium";
+  src: url(/assets/fonts/Rubik-Medium.ttf);
+
+  /*?  Font Weight 500  ?*/
+}
+
+@font-face {
+  font-family: "Rubik-SemiBold";
+  src: url(/assets/fonts/Rubik-SemiBold.ttf);
+
+  /*?  Font Weight 600  ?*/
+}
+
+@font-face {
+  font-family: "Rubik-Bold";
+  src: url(/assets/fonts/Rubik-Bold.ttf);
+
+  /*?  Font Weight 700  ?*/
+}
+
+
+
+body {
+  font-family: "Rubik-Regular" !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-color) !important;
+  background-color: #2dc99175 !important;
+}
+
+.inner {
+  height: 100vh !important;
+  overflow: auto;
+  width: 100% !important;
+  background-color: var(--white-color);
+}
+
+.container {
+  padding: 0 26px !important;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.light-text {
+  color: var(--black-color);
+}
+
+.dark-text {
+  color: var(--white-color);
+}
+
+
+
+/*=====  Start Home Section  =====*/
+
+.darkBg {
+  background-color: var(--dark-color);
+}
+
+.pfp {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  position: relative;
+  margin-left: 20px;
+}
+
+.pfp img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pfp-active {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  height: 11px;
+  width: 11px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+}
+
+.pfp-active-inside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 7.86px;
+  width: 7.86px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.swiper {
+  width: 100%;
+  height: 180px;
+  overflow: visible;
+  padding-bottom: 30px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  align-items: center;
+  height: 180px;
+  width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.mySwiper .swiper-pagination {
+  position: relative !important;
+  bottom: -25px !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--primary-color) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--secondary-color) !important;
+  width: 16px !important;
+  height: 6px !important;
+  border-radius: 10px !important;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  margin: 0 !important;
+}
+
+.home-listing-heading {
+  font-family: "Rubik-Bold";
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--primary-color);
+  margin-top: 70px;
+}
+
+.home-listing-img-div-light,
+.home-listing-img-div-dark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.home-listing-img-div-light {
+  background-color: var(--white-color);
+  box-shadow: 0px 0px 25px 0px #0000001F;
+}
+
+.home-listing-img-div-dark {
+  background-color: transparent;
+  box-shadow: 0px 0px 4px 0px #2DC97A;
+}
+
+.home-listing-text {
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-top: 12px;
+  margin-bottom: 0 !important;
+}
+
+/*=====  End Home Section  =====*/
+
+
+
+/*=====  Start Login & SignUp Section  =====*/
+
+.login-img {
+  width: 70%;
+  margin-top: 50px;
+}
+
+.bg-main {
+  background-color: var(--primary-color);
+}
+
+.light-bg {
+  background-color: var(--white-color);
+  box-shadow: 0px 9px 2px 0px var(--secondary-color) inset;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  color: var(--dark-color);
+}
+
+.dark-bg {
+  background-color: var(--dark-color);
+  box-shadow: 0px 9px 2px 0px var(--secondary-color) inset;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  color: var(--white-color);
+}
+
+.login-placeholder {
+  font-family: "Rubik-Medium";
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.input-box {
+  box-shadow: 0px 0px 4px 0px #2DC97A;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.input-box div {
+  font-family: "Rubik-Medium";
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.input-box input {
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.country-select {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+/* Light mode */
+.input-box input.lightInput:-webkit-autofill,
+.input-box input.lightInput:-webkit-autofill:hover,
+.input-box input.lightInput:-webkit-autofill:focus,
+.input-box input.lightInput:-webkit-autofill:active {
+  /* background white */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  /* text black */
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Dark mode */
+.input-box input.darkInput:-webkit-autofill,
+.input-box input.darkInput:-webkit-autofill:hover,
+.input-box input.darkInput:-webkit-autofill:focus,
+.input-box input.darkInput:-webkit-autofill:active {
+  /* text white */
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.input-box input.lightInput,
+.country-select.lightCode {
+  color: var(--dark-color);
+}
+
+.input-box input.darkInput,
+.country-select.darkCode {
+  color: var(--white-color);
+}
+
+option {
+  color: var(--black-color);
+}
+
+.divider {
+  width: 2px;
+  background-color: #2DC97A40;
+  align-self: stretch;
+}
+
+.btns-main {
+  margin-top: 50px;
+}
+
+.new-user-link {
+  font-family: "Rubik-Bold";
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--primary-color);
+  margin-top: 65px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/*=====  End Login & SignUp Section  =====*/
+
+
+
+/*=====  Start Login & Signup Otp Section  =====*/
+
+.login-otp-heading {
+  font-family: "Rubik-Bold";
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+.otp-fill-num {
+  font-family: "Rubik-Medium";
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--primary-color);
+  margin-top: 55px;
+  margin-bottom: 58px;
+  text-align: center;
+}
+
+.resend-otp {
+  font-family: "Rubik-Medium";
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: 47px;
+  margin-bottom: 45px;
+}
+
+.resend-otp span {
+  font-family: "Rubik-Bold";
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/*=====  End Login & Signup Otp Section  =====*/
+
+
+
+/*=====  Start Setting Section  =====*/
+
+.settings-profile h2 {
+  font-family: "Rubik-Medium";
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-bottom: 30px !important;
+}
+
+.settings-profile div img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.settings-profile p {
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-top: 18px;
+  margin-bottom: 0 !important;
+}
+
+.settings-options {
+  margin-top: 80px;
+}
+
+.settings-options .icon-div {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-options p {
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.settings-options .lang-name {
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.lang-select-box {
+  height: 30px;
+  width: 30px;
+  box-shadow: 0px 0px 4px 0px var(--primary-color);
+  background-color: transparent;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+
+.option-div {
+  margin-bottom: 30px;
+}
+
+.switch {
+  --secondary-container: #3a4b39;
+  --primary: #84da89;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 31px;
+}
+
+.switch input {
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 1.5px solid var(--primary-color);
+  transition: .2s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.3em;
+  width: 1.3em;
+  border-radius: 20px;
+  left: 0.20em;
+  bottom: 0.20em;
+  background-color: var(--primary-color);
+  transition: .4s;
+}
+
+input:checked+.slider::before {
+  background-color: var(--white-color);
+}
+
+input:checked+.slider {
+  border: 1.5px solid transparent;
+  background-color: var(--primary-color);
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked+.slider:before {
+  transform: translateX(1.2em);
+}
+
+
+/*=====  End Setting Section  =====*/
+
+
+
+/** =====  Start Media Queries Section  ===== **/
+
+@media only screen and (max-width: 576px) {
+
+  body {
+    background-color: transparent !important;
+  }
+
+
+  .main {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  .bg-main {
+    height: 80%;
+  }
+
+}
+
+/** =====  End Media Queries Section  ===== **/
+
+
+
+/* =====  Start Scrollbar Section  ===== */
+
+::-webkit-scrollbar {
+  width: 1rem;
+  display: none;
+}
+
+/* =====  End Scrollbar Section  ===== */

@@ -1,0 +1,26 @@
+.greenBtn {
+  background-color: var(--primary-color);
+  padding: 20px 120px;
+  border-radius: 20px;
+  font-family: "Rubik-Medium";
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  outline: none;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.white-greenBtn {
+  color: var(--white-color);
+}
+
+.dark-greenBtn {
+  color: var(--dark-color);
+}
+
+.greenBtn:hover {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}

@@ -1,0 +1,19 @@
+.orangeBtn {
+  background-color: var(--secondary-color);
+  padding: 15px 65px;
+  font-family: "Rubik-Medium";
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--black-color);
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  transition: all 0.3s;
+}
+
+.orangeBtn:hover {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
