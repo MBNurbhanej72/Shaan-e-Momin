@@ -10,6 +10,10 @@
 
 :root {
   --primary-color: #2DC97A;
+  --primary-color-6: #2DC97A0F;
+  --primary-color-29: #2DC97A4A;
+  --primary-color-33: #2DC97A54;
+  --primary-color-89: #2DC97AE3;
   --secondary-color: #FF9933;
   --dark-color: #101420;
   --white-color: #fff;
@@ -23,6 +27,7 @@
 @font-face {
   font-family: "Rubik-Light";
   src: url(/assets/fonts/Rubik-Light.ttf);
+  font-display: swap;
 
   /*?  Font Weight 300  ?*/
 }
@@ -30,6 +35,7 @@
 @font-face {
   font-family: "Rubik-Regular";
   src: url(/assets/fonts/Rubik-Regular.ttf);
+  font-display: swap;
 
   /*?  Font Weight 400  ?*/
 }
@@ -37,6 +43,7 @@
 @font-face {
   font-family: "Rubik-Medium";
   src: url(/assets/fonts/Rubik-Medium.ttf);
+  font-display: swap;
 
   /*?  Font Weight 500  ?*/
 }
@@ -44,6 +51,7 @@
 @font-face {
   font-family: "Rubik-SemiBold";
   src: url(/assets/fonts/Rubik-SemiBold.ttf);
+  font-display: swap;
 
   /*?  Font Weight 600  ?*/
 }
@@ -51,6 +59,7 @@
 @font-face {
   font-family: "Rubik-Bold";
   src: url(/assets/fonts/Rubik-Bold.ttf);
+  font-display: swap;
 
   /*?  Font Weight 700  ?*/
 }
@@ -348,6 +357,67 @@ option {
 
 /*=====  Start Login & Signup Otp Section  =====*/
 
+.light-signup {
+  background-color: var(--white-color);
+}
+
+.dark-signup {
+  background-color: var(--dark-color);
+}
+
+.signup-otp-heading {
+  font-family: "Rubik-Medium";
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--primary-color);
+  margin-top: 25px;
+  margin-bottom: 0 !important;
+}
+
+.signup-otp-img {
+  width: 165px;
+  height: 143px;
+  margin: 48px 0 62px;
+}
+
+.signup-otp-upper p {
+  font-family: "Rubik-Medium";
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--primary-color);
+}
+
+.signup-otp-upper p:nth-of-type(1) {
+  margin-bottom: 20px;
+}
+
+.signup-lower-main {
+  background-color: var(--primary-color);
+  box-shadow: 0px 9px 2px 0px var(--secondary-color) inset;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  color: var(--dark-color);
+}
+
+.signup-lower-main.light-bg .otp-box {
+  background-color: var(--white-color);
+}
+
+.signup-lower-main.dark-bg .otp-box {
+  background-color: var(--dark-color);
+}
+
+.signup-resend-otp {
+  color: var(--black-color) !important;
+}
+
+.signup-resend-otp span {
+  color: var(--white-color) !important;
+}
+
+
 .login-otp-heading {
   font-family: "Rubik-Bold";
   font-size: 18px;
@@ -408,7 +478,6 @@ option {
   border-radius: 50%;
   object-fit: cover;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .settings-profile p {
@@ -466,8 +535,6 @@ option {
 }
 
 .switch {
-  --secondary-container: #3a4b39;
-  --primary: #84da89;
   font-size: 17px;
   position: relative;
   display: inline-block;
@@ -524,8 +591,119 @@ input:checked+.slider:before {
   transform: translateX(1.2em);
 }
 
-
 /*=====  End Setting Section  =====*/
+
+
+
+/*=====  Start User Profile Section  =====*/
+
+.light-profile-bg {
+  background-color: var(--primary-color-6);
+  padding: 25px 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.dark-profile-bg {
+  background-color: var(--primary-color-29);
+  padding: 25px 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.profile-container {
+  padding: 0 26px !important;
+}
+
+.profile-icon-div {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.profile-icon-div.light-icon-div {
+  background-color: var(--primary-color-33);
+}
+
+.profile-icon-div.dark-icon-div {
+  background-color: var(--primary-color-89);
+}
+
+.profile-uppr h2 {
+  margin-bottom: 0 !important;
+}
+
+.popup-light {
+  background-color: var(--white-color);
+}
+
+.popup-dark {
+  background-color: var(--dark-color);
+}
+
+.user-setting-popup {
+  position: absolute;
+  top: 42px;
+  right: 10px;
+  z-index: 10;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 10px;
+  white-space: nowrap;
+  padding: 12px 0 15px;
+  cursor: default;
+}
+
+.user-setting-popup div {
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.user-setting-popup span {
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -0.3px;
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+
+.user-setting-popup img {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.popup-hr {
+  border: 1px solid var(--secondary-color);
+  margin: 8px 0;
+  cursor: default !important;
+}
+
+.profile-edit-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--secondary-color);
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 9px;
+  cursor: pointer;
+}
+
+.profile-edit-icon {
+  height: 20px !important;
+  width: 20px !important;
+  margin-left: 2px;
+  margin-bottom: 1px;
+}
+
+.profile-uppr p {
+  font-family: "Rubik-Medium";
+}
+
+/*=====  End User Profile Section  =====*/
 
 
 

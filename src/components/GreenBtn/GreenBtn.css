@@ -24,3 +24,24 @@
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
 }
+
+.light-btn {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.light-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+}
+
+.dark-btn {
+  background-color: var(--dark-color);
+  color: var(--primary-color);
+}
+
+.dark-btn:hover {
+  border: 2px solid var(--dark-color);
+  color: var(--dark-color);
+}

@@ -7,6 +7,7 @@ import UserProfile from "../pages/UserProfile";
 import Settings from "../pages/Settings";
 import ProtectedRoute from "./ProtectedRoute";
 import LoginOtp from "../pages/LoginOtp";
+import SignUpOtp from "../pages/SignUpOtp";
 
 export const Routing = createBrowserRouter([
   {
@@ -20,4 +21,5 @@ export const Routing = createBrowserRouter([
   { path: "/login", element: <Login /> },
   { path: "login-otp", element: <LoginOtp /> },
   { path: "/signup", element: <SignUp /> },
+  { path: "/signup-otp", element: <SignUpOtp /> },
 ]);

@@ -45,7 +45,7 @@ const SignUp = () => {
       if (res.data.status === "success") {
         reset();
         toast.success(res.data.message);
-        navigate("/login");
+        navigate("/signup-otp", { state: { country_code: d.country_code, mobile_number: d.mobile_number } });
       } else {
         toast.error(res.data.message);
       }

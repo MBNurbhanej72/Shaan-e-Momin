@@ -8,8 +8,29 @@ import { Pagination } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import "../App.css";
+import { useEffect, useState } from "react";
+import { api } from "../api/Api";
 
 const Home = () => {
+  const [pfp, setPfp] = useState(null);
+
+  const getUserData = async () => {
+    const token = localStorage.getItem("isLoggedIn");
+
+    try {
+      const res = await api.get("get-user-data", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }, timeout: 5000,
+      });
+
+      setPfp(res?.data?.data?.photo_full_url);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => { getUserData(); }, []);
 
   const navigate = useNavigate();
 
@@ -25,7 +46,7 @@ const Home = () => {
 
           <div className="pfp" onClick={() => navigate("/user-profile")}>
             <label htmlFor="pfp">
-              <img src="/assets/images/pfp.jpg" accept="image/*" alt="Profile Image" />
+              <img src={pfp === "https://shaan-e-momin.emaad-infotech.com/public/image/no_image.jpg" ? "/assets/images/pfp.jpg" : pfp} alt="Profile Image" />
             </label>
             <div className="pfp-active">
               <div className="pfp-active-inside"></div>

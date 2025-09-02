@@ -1,14 +1,13 @@
-import { useForm } from "react-hook-form";
-import { useMode } from "../store/ModeStore";
-import GreenBtn from "../components/GreenBtn/GreenBtn";
-import { useLocation, useNavigate } from "react-router-dom";
-import { OtpBox } from "../components/OtpBox/OtpBox";
 import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useMode } from "../store/ModeStore";
 import { api } from "../api/Api";
 import { toast } from "react-toastify";
+import { OtpBox } from "../components/OtpBox/OtpBox";
+import GreenBtn from "../components/GreenBtn/GreenBtn";
 
-
-const LoginOtp = () => {
+const SignUpOtp = () => {
   const [otpVal, setOtpVal] = useState("");
   const [resetOtp, setResetOtp] = useState(false);
 
@@ -21,7 +20,7 @@ const LoginOtp = () => {
 
   useEffect(() => {
     if (!countryCode || !mobileNum) {
-      navigate("/login", { replace: true });
+      navigate("/signup", { replace: true });
     }
   }, [countryCode, mobileNum]);
 
@@ -44,7 +43,7 @@ const LoginOtp = () => {
       if (res.data.status === "success") {
         reset();
         toast.success(res.data.message);
-        navigate("/");
+        navigate("/login");
         localStorage.setItem("isLoggedIn", loginToken);
       } else {
         toast.error(res.data.message);
@@ -77,30 +76,29 @@ const LoginOtp = () => {
   };
 
   return (
-    <div className="bg-main">
-      <div className="d-flex justify-content-center">
-        <img src="assets/images/login-otp-img.svg" className="login-img" alt="Image" />
+    <div className={`${mode === "light" ? "light-signup" : "dark-signup"} bg-main`}>
+      <div className="d-flex flex-column align-items-center justify-content-center signup-otp-upper">
+        <h2 className="signup-otp-heading">Enter Verification Code</h2>
+
+        <img src="assets/images/signup-otp-img.svg" width={165} height={143} className="signup-otp-img" alt="Image" />
+
+        <p>ENTER OTP</p>
+
+        <p>Enter the OTP sent to <span className={`${mode === "light" ? "light-text" : "dark-text"}`}>{countryCode} - {mobileNum}</span></p>
       </div>
 
-      <div className={`${mode === "light" ? "light-bg" : "dark-bg"} p-5 mt-5`}>
-        <div className="d-flex flex-column justify-content-center align-items-center h-100">
-
-          <div>
-            <h3 className={`${mode === "light" ? "light-text" : "dark-text"} login-otp-heading`}>OTP Verification</h3>
-
-            <p className="otp-fill-num">Enter the OTP sent to <span className={`${mode === "light" ? "light-text" : "dark-text"}`}>{countryCode} - {mobileNum}</span></p>
-          </div>
-
+      <div className={`${mode === "light" ? "light-bg" : "dark-bg"} signup-lower-main p-5 mt-5`}>
+        <div className="d-flex flex-column justify-content-center align-items-center h-100 pt-5">
           <form onSubmit={handleSubmit(handleVerifyOtp)}>
 
             <div className="d-flex align-items-center gap-3 justify-content-center">
               <OtpBox mode={mode} setOtpVal={setOtpVal} resetTrigger={resetOtp} />
             </div>
 
-            <p className={`${mode === "light" ? "light-text" : "dark-text"} resend-otp`}>Donot receive the OTP? <span onClick={resendOtp}>RESEND OTP</span></p>
+            <p className="signup-resend-otp resend-otp">Donot receive the OTP? <span onClick={resendOtp}>RESEND OTP</span></p>
 
             <div className="d-flex flex-column align-items-center btns-main">
-              <GreenBtn btnText="VERIFY" />
+              <GreenBtn btnText="VERIFY" bgColorClass={mode === "light" ? "light-btn" : "dark-btn"} />
             </div>
           </form>
         </div>
@@ -109,4 +107,4 @@ const LoginOtp = () => {
   );
 };
 
-export default LoginOtp;
+export default SignUpOtp;
